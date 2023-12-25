@@ -23,6 +23,13 @@
     return self;
 }
 
+-(void)clear{
+    for (int index = 0;index < MAX_CHANNEL_COUNT;++index){
+        [samples[index] removeAllObjects];
+    }
+    self.lastPackageIndex = 0;
+}
+
 -(void)addSample:(SynchronySample*)sample channelIndex:(int)channelIndex{
     [samples[channelIndex] addObject:sample];
     if (samples[channelIndex].count > MAX_SAMPLE_COUNT){
@@ -38,7 +45,8 @@
 @property (atomic, strong) SynchronyData* eegData;
 @property (atomic, strong) SynchronyData* ecgData;
 @property (atomic, strong) SynchronyData* impedanceData;
-
+@property (atomic, assign) DataNotifyFlags dataFlag;
+@property (atomic, assign) BOOL hasStartDataTransfer;
 @end
 
 @implementation ViewController
@@ -57,7 +65,7 @@
 }
 
 - (IBAction)onConnect:(id)sender{
-    if (self.profile.state == BLEStateConnected || self.profile.state == BLEStateRuning){
+    if (self.profile.state >= BLEStateConnected){
         [self.profile disconnect];
     }else if (self.device != nil){
         [self.profile connect:self.device];
@@ -75,18 +83,50 @@
     [self getEEG];
     [self getECG];
     [self getImpedance];
-    
-    [self.profile setDataNotifSwitch: (DNF_EEG | DNF_ECG | DNF_IMPEDANCE) cb:^(GF_RET_CODE resp) {
+}
+
+- (IBAction)onDataAction:(id)sender{
+    if (self.profile.state >= BLEStateConnected && self.hasStartDataTransfer){
+        [self stopDataTransfer];
+    }else if (self.device != nil  && !self.hasStartDataTransfer){
+        [self startDataTransfer];
+    }
+}
+
+-(void)startDataTransfer{
+    if (self.dataFlag == 0){
+        self.dataText.text = @"please get version first";
+        return;
+    }
+    [self.profile setDataNotifSwitch: self.dataFlag cb:^(GF_RET_CODE resp) {
         NSLog(@"got set data notify response %ld", (long)resp);
         if (resp == GF_SUCCESS){
+            //clear old data
+            [self.eegData clear];
+            [self.ecgData clear];
+            [self.impedanceData clear];
+            
             [self.profile startDataNotification];
+            self.hasStartDataTransfer = TRUE;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.dataText.text = @"data transfer started";
+            });
         }
     } timeout:TIMEOUT];
+}
+
+-(void)stopDataTransfer{
+    [self.profile stopDataNotification];
+    self.hasStartDataTransfer = FALSE;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.dataText.text = @"data transfer stoped";
+    });
 }
 
 -(void)getEEG{
     [self.profile getEegDataConfig:^(GF_RET_CODE resp, int sampleRate, int channelMask, int packageSampleCount, int resolutionBits, double conversionK) {
         if (resp == GF_SUCCESS){
+            NSLog(@"got eeg 1");
             self.eegData = [[SynchronyData alloc] init];
             SynchronyData* data = self.eegData;
             data.sampleRate = sampleRate;
@@ -102,7 +142,9 @@
     [self.profile getEegDataCap:^(GF_RET_CODE resp, NSArray *supportedSampleRates, int maxChannelCount, int maxPackageSampleCount, NSArray *supportedResolutionBits) {
         
         if (resp == GF_SUCCESS){
+            NSLog(@"got eeg 2");
             self.eegData.channelCount = maxChannelCount;
+            self.dataFlag |= DNF_EEG;
         }
     } timeout:TIMEOUT];
 }
@@ -110,6 +152,7 @@
 -(void)getECG{
     [self.profile getEcgDataConfig:^(GF_RET_CODE resp, int sampleRate, int channelMask, int packageSampleCount, int resolutionBits, double conversionK) {
         if (resp == GF_SUCCESS){
+            NSLog(@"got ecg 1");
             self.ecgData = [[SynchronyData alloc] init];
             SynchronyData* data = self.ecgData;
             data.sampleRate = sampleRate;
@@ -125,7 +168,9 @@
     [self.profile getEcgDataCap:^(GF_RET_CODE resp, NSArray *supportedSampleRates, int maxChannelCount, int maxPackageSampleCount, NSArray *supportedResolutionBits) {
         
         if (resp == GF_SUCCESS){
+            NSLog(@"got ecg 2");
             self.ecgData.channelCount = maxChannelCount;
+            self.dataFlag |= DNF_ECG;
         }
     } timeout:TIMEOUT];
 }
@@ -133,6 +178,7 @@
 -(void)getImpedance{
     [self.profile getImpedanceDataConfig:^(GF_RET_CODE resp, int sampleRate, int channelMask, int packageSampleCount, int resolutionBits, double conversionK) {
         if (resp == GF_SUCCESS){
+            NSLog(@"got impe 1");
             self.impedanceData = [[SynchronyData alloc] init];
             SynchronyData* data = self.impedanceData;
             data.sampleRate = sampleRate;
@@ -148,7 +194,9 @@
     [self.profile getImpedanceDataCap:^(GF_RET_CODE resp, NSArray *supportedSampleRates, int maxChannelCount, int maxPackageSampleCount, NSArray *supportedResolutionBits) {
         
         if (resp == GF_SUCCESS){
+            NSLog(@"got impe 2");
             self.impedanceData.channelCount = maxChannelCount;
+            self.dataFlag |= DNF_IMPEDANCE;
         }
     } timeout:TIMEOUT];
 }
@@ -158,13 +206,14 @@
     NSLog(@"got gforce error %@", err);
 }
 - (void)onSynchronyStateChange: (BLEState)newState{
-    if (newState == BLEStateConnected){
-        self.statusText.text = @"Connected";
-    }else if (newState == BLEStateRuning){
-        self.statusText.text = @"Running";
-    }else{
-        self.statusText.text = @"Not Connected";
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (newState >= BLEStateConnected){
+            self.statusText.text = @"Connected";
+        }else{
+            self.statusText.text = @"Not Connected";
+            self.hasStartDataTransfer = FALSE;
+        }
+    });
 }
 
 - (void)onSynchronyScanResult:(NSArray *)bleDevices{
@@ -193,19 +242,28 @@
         unsigned char* result = (unsigned char*)rawData.bytes;
         if (result[0] == NTF_EEG || result[0] == NTF_ECG || result[0] == NTF_IMPEDANCE){
             SynchronyData* synchronyData = nil;
-            if (result[0] == NTF_EEG)
+            if (result[0] == NTF_EEG){
                 synchronyData = self.eegData;
-            else if (result[0] == NTF_ECG)
+                NSLog(@"got eeg data");
+            }
+            else if (result[0] == NTF_ECG){
                 synchronyData = self.ecgData;
-            else if (result[0] == NTF_IMPEDANCE)
+                NSLog(@"got ecg data");
+            }
+            else if (result[0] == NTF_IMPEDANCE){
                 synchronyData = self.impedanceData;
-            
+                NSLog(@"got impedance data");
+            }
+            if (synchronyData == nil){
+                return;
+            }
             int readOffset = 1;
 
             @try {
                 int packageIndex = *((unsigned short*)(result + readOffset));
                 readOffset += 2;
                 int newPackageIndex = packageIndex;
+                NSLog(@"packageindex: %d", packageIndex);
                 int lastPackageIndex = synchronyData.lastPackageIndex;
                 
                 if (packageIndex < lastPackageIndex){
@@ -221,9 +279,9 @@
                     }else{
                         synchronyData.lastPackageIndex = newPackageIndex - 1;
                     }
-                    [self readSamples:result synchronyData:synchronyData offset:readOffset lostSampleCount:0];
-                    synchronyData.lastPackageIndex = newPackageIndex;
                 }
+                [self readSamples:result synchronyData:synchronyData offset:readOffset lostSampleCount:0];
+                synchronyData.lastPackageIndex = newPackageIndex;
             } @catch (NSException *exception) {
                 NSLog(@"Error: %@", [exception description]);
             } @finally {

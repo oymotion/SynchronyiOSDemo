@@ -135,7 +135,7 @@ typedef NS_ENUM(NSInteger, BLEState)
     BLEStateConnecting,
     BLEStateUnConnected,
     BLEStateConnected,
-    BLEStateRuning,
+    BLEStateRunning,
 };
 
 #endif /* gforcedefines_h */

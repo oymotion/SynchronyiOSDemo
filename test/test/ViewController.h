@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <synchrony/synchrony.h>
 
-const int TIMEOUT = 5;
+const int TIMEOUT = 5; //5 seconds
 const int MAX_SAMPLE_COUNT = 256;
 const int MAX_CHANNEL_COUNT = 8;
 
@@ -32,6 +32,7 @@ const int MAX_CHANNEL_COUNT = 8;
 @property (atomic, assign) int packageSampleCount;
 @property (atomic, assign) double K;
 -(id)init;
+-(void)clear;
 -(void)addSample:(SynchronySample*)sample channelIndex:(int)channelIndex;
 @end
 
@@ -43,13 +44,16 @@ const int MAX_CHANNEL_COUNT = 8;
 @property (nonatomic, retain) IBOutlet UIButton *scanButton;
 @property (nonatomic, retain) IBOutlet UIButton *connectButton;
 @property (nonatomic, retain) IBOutlet UIButton *versionButton;
+@property (nonatomic, retain) IBOutlet UIButton *dataButton;
 
 @property (nonatomic, retain) IBOutlet UILabel *deviceText;
 @property (nonatomic, retain) IBOutlet UILabel *statusText;
 @property (nonatomic, retain) IBOutlet UILabel *versionText;
+@property (nonatomic, retain) IBOutlet UILabel *dataText;
 
 - (IBAction)onScan:(id)sender;
 - (IBAction)onConnect:(id)sender;
 - (IBAction)onVersion:(id)sender;
+- (IBAction)onDataAction:(id)sender;
 @end
 

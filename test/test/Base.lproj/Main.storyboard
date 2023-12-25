@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-Fl-UcZ">
-                                <rect key="frame" x="57" y="418" width="278" height="174"/>
+                                <rect key="frame" x="57" y="418" width="278" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -65,12 +65,30 @@
                                     <action selector="onConnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IEw-89-pyF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJj-FF-4gT">
+                                <rect key="frame" x="103" y="524" width="204" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Start/Stop data transfer"/>
+                                <connections>
+                                    <action selector="onDataAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j4n-uy-eXw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfS-Rm-WL5">
+                                <rect key="frame" x="66" y="594" width="278" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="connectButton" destination="JtE-wk-UKk" id="xN0-Of-Sph"/>
+                        <outlet property="dataButton" destination="UJj-FF-4gT" id="zAe-52-0As"/>
+                        <outlet property="dataText" destination="XfS-Rm-WL5" id="fdx-81-JSf"/>
                         <outlet property="deviceText" destination="fIV-eC-3Il" id="NCh-zc-SL7"/>
                         <outlet property="scanButton" destination="blf-69-FjK" id="g9b-5Z-3n6"/>
                         <outlet property="statusText" destination="T7p-l3-kz1" id="nZk-N8-TtT"/>
