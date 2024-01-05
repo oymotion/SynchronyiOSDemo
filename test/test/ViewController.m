@@ -296,6 +296,7 @@
 - (void)readSamples:(unsigned char *)data synchronyData:(SynchronyData*) synchronyData offset:(int)offset lostSampleCount:(int)lostSampleCount{
     
     int sampleCount = synchronyData.packageSampleCount;
+    int sampleInterval = 1000 / synchronyData.sampleRate; // sample rate should be less than 1000
     if (lostSampleCount > 0)
         sampleCount = lostSampleCount;
     
@@ -307,6 +308,8 @@
             if ((synchronyData.channelMask & (1 << channelIndex)) > 0){
                 SynchronySample* sample = [[SynchronySample alloc] init];
                 sample.rawDataSampleIndex = lastSampleIndex;
+                sample.timeStampInMs = lastSampleIndex * sampleInterval;
+                
                 if (lostSampleCount > 0){
                     //add missing samples with 0
                     sample.rawData = 0;

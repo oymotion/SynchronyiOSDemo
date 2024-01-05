@@ -14,6 +14,7 @@ const int MAX_CHANNEL_COUNT = 8;
 
 
 @interface SynchronySample : NSObject
+@property (atomic, assign) int timeStampInMs;
 @property (atomic, assign) int rawDataSampleIndex;
 @property (atomic, assign) int rawData;
 @property (atomic, assign) float convertData;
