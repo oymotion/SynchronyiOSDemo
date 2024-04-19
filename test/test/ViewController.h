@@ -6,37 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <synchrony/synchrony.h>
-
-const int TIMEOUT = 5; //5 seconds
-const int MAX_SAMPLE_COUNT = 256;
-const int MAX_CHANNEL_COUNT = 8;
-
-
-@interface SynchronySample : NSObject
-@property (atomic, assign) int timeStampInMs;
-@property (atomic, assign) int rawDataSampleIndex;
-@property (atomic, assign) int rawData;
-@property (atomic, assign) float convertData;
-@end
-
-
-@interface SynchronyData : NSObject
-{
-    NSMutableArray* samples[MAX_CHANNEL_COUNT];
-}
-@property (atomic, assign) int lastPackageIndex;
-@property (atomic, assign) int resolutionBits;
-@property (atomic, assign) int sampleRate;
-@property (atomic, assign) int channelCount;
-@property (atomic, assign) int channelMask;
-@property (atomic, assign) int packageSampleCount;
-@property (atomic, assign) double K;
--(id)init;
--(void)clear;
--(void)addSample:(SynchronySample*)sample channelIndex:(int)channelIndex;
-@end
-
 
 @interface ViewController : UIViewController
 {

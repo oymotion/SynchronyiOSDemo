@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B95EE8BD2BD21320000276F9 /* SensorController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95EE8BC2BD21320000276F9 /* SensorController.m */; };
 		B9C1B59A2B340D25000291C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B5992B340D25000291C8 /* AppDelegate.m */; };
 		B9C1B59D2B340D25000291C8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B59C2B340D25000291C8 /* SceneDelegate.m */; };
 		B9C1B5A02B340D25000291C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B59F2B340D25000291C8 /* ViewController.m */; };
@@ -14,10 +15,12 @@
 		B9C1B5A52B340D28000291C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9C1B5A42B340D28000291C8 /* Assets.xcassets */; };
 		B9C1B5A82B340D28000291C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C1B5A62B340D28000291C8 /* LaunchScreen.storyboard */; };
 		B9C1B5AB2B340D28000291C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B5AA2B340D28000291C8 /* main.m */; };
-		B9E2A1B72B3461770026859F /* synchrony.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E2A1B62B3461770026859F /* synchrony.xcframework */; };
+		B9DFFB2A2BD2138700B1B7C5 /* sensor.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DFFB292BD2138700B1B7C5 /* sensor.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B95EE8BB2BD21320000276F9 /* SensorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorController.h; sourceTree = "<group>"; };
+		B95EE8BC2BD21320000276F9 /* SensorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensorController.m; sourceTree = "<group>"; };
 		B9C1B5952B340D25000291C8 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C1B5982B340D25000291C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B9C1B5992B340D25000291C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -30,7 +33,7 @@
 		B9C1B5A72B340D28000291C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9C1B5A92B340D28000291C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9C1B5AA2B340D28000291C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B9E2A1B62B3461770026859F /* synchrony.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = synchrony.xcframework; path = test/synchrony.xcframework; sourceTree = "<group>"; };
+		B9DFFB292BD2138700B1B7C5 /* sensor.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sensor.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E2A1B72B3461770026859F /* synchrony.xcframework in Frameworks */,
+				B9DFFB2A2BD2138700B1B7C5 /* sensor.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +51,7 @@
 		B9C1B58C2B340D25000291C8 = {
 			isa = PBXGroup;
 			children = (
-				B9E2A1B62B3461770026859F /* synchrony.xcframework */,
+				B9DFFB292BD2138700B1B7C5 /* sensor.xcframework */,
 				B9C1B5972B340D25000291C8 /* test */,
 				B9C1B5962B340D25000291C8 /* Products */,
 			);
@@ -76,6 +79,8 @@
 				B9C1B5A62B340D28000291C8 /* LaunchScreen.storyboard */,
 				B9C1B5A92B340D28000291C8 /* Info.plist */,
 				B9C1B5AA2B340D28000291C8 /* main.m */,
+				B95EE8BB2BD21320000276F9 /* SensorController.h */,
+				B95EE8BC2BD21320000276F9 /* SensorController.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				B9C1B5A02B340D25000291C8 /* ViewController.m in Sources */,
 				B9C1B59A2B340D25000291C8 /* AppDelegate.m in Sources */,
 				B9C1B5AB2B340D28000291C8 /* main.m in Sources */,
+				B95EE8BD2BD21320000276F9 /* SensorController.m in Sources */,
 				B9C1B59D2B340D25000291C8 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

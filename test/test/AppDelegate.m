@@ -16,7 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.profile = [[SynchronyProfile alloc] init];
     return YES;
 }
 

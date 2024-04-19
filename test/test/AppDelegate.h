@@ -7,12 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import <synchrony/synchrony.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
 
 }
-@property (atomic, retain) SynchronyProfile* profile;
+
 @end
 
