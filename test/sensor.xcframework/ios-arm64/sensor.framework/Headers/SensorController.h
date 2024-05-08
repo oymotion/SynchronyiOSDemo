@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <sensor/sensor.h>
+#import <sensor/sensorProfile.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Sample : NSObject
@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (atomic, assign) unsigned long long channelMask;
 @property (atomic, assign) int packageSampleCount;
 @property (atomic, assign) double K;
-@property (atomic, strong) NSMutableArray<NSMutableArray<Sample*>*>* channelSamples;
+@property (atomic, strong) NSArray<NSArray<Sample*>*>* channelSamples;
 -(id)init;
 -(void)clear;
 -(SensorData*)flushSamples;
@@ -57,8 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (atomic, strong) SensorData* ecgData;
 @property (atomic, strong) SensorData* accData;
 @property (atomic, strong) SensorData* gyroData;
-@property (atomic, strong) NSMutableArray<NSNumber*>* impedanceData;
-@property (atomic, strong) NSMutableArray<NSNumber*>* saturationData;
+@property (atomic, strong) NSArray<NSNumber*>* impedanceData;
+@property (atomic, strong) NSArray<NSNumber*>* saturationData;
 @property (atomic, assign) int lastImpedanceIndex;
 @property (atomic, assign) DataNotifyFlags dataFlag;
 
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)stopScan;
 -(BOOL)connect:(BLEPeripheral*)peripheral;
 -(void)disconnect;
--(void)initDataNotification:(onlyResponseCallback)cb;
+-(void)initDataNotification:(int)packageCount cb:(onlyResponseCallback)cb;
 -(BOOL)hasInitDataNotification;
 -(BOOL)startDataNotification;
 -(BOOL)stopDataNotification;

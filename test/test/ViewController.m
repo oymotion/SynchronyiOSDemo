@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-#import "SensorController.h"
+#import <sensor/sensor.h>
 
 
 
@@ -15,6 +15,8 @@
 @property (atomic, strong) BLEPeripheral* device;
 @property (atomic, assign) BOOL hasStartDataTransfer;
 @end
+
+const int PACKAGE_COUNT = 10;
 
 @implementation ViewController
 
@@ -39,8 +41,7 @@
 }
 
 - (IBAction)onVersion:(id)sender{
-
-    [self.profile initDataNotification:^(GF_RET_CODE resp) {
+    [self.profile initDataNotification:PACKAGE_COUNT cb:^(GF_RET_CODE resp) {
         if (resp == GF_SUCCESS){
             [self.profile getControllerFirmwareVersion:^(GF_RET_CODE resp, NSString *firmwareVersion) {
                 dispatch_async(dispatch_get_main_queue(), ^{

@@ -22,6 +22,17 @@
 			MB21GKprkG0F4nXowZe5+rQjrYMAdY+1+4jCF269NWw=
 			</data>
 		</dict>
+		<key>Headers/SensorController.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Y+EMD7c35vZMTpQqyYXVWFmzgaM=
+			</data>
+			<key>hash2</key>
+			<data>
+			3gLnU330keEGRkrEO6p5di+b1KqLDVr+RPrPCIRnBUo=
+			</data>
+		</dict>
 		<key>Headers/defines.h</key>
 		<dict>
 			<key>hash</key>
@@ -48,11 +59,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MoEfWObPg+Fix5/ETLHnXzXiBx0=
+			j7T4eHOdhHRR6PrqguHAMBAMEc4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Bxzx6FUPbbFWpdSZVyT6r4fVVsqMwed1BgG4VO1rl+4=
+			gp5MkpzOkNhPJEePcdFi9nD1pT+5VfZhKRG5IqODGQw=
 			</data>
 		</dict>
 		<key>Headers/sensorProfile.h</key>

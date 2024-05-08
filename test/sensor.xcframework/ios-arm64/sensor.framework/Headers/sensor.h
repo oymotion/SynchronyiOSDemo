@@ -10,5 +10,5 @@
 
 
 #import <sensor/sensorProfile.h>
-
+#import <sensor/SensorController.h>
 #endif /* sensorOC_Bridge_h */
