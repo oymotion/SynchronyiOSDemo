@@ -4,8 +4,3 @@ framework module sensor {
   export *
   module * { export * }
 }
-
-module sensor.Swift {
-  header "sensor-Swift.h"
-  requires objc
-}

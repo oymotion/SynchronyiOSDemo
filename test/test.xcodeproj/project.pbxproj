@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B92CD29D2BFEE7A8005C0A4B /* sensor.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92CD29C2BFEE7A8005C0A4B /* sensor.xcframework */; };
+		B92CD29E2BFEE7B0005C0A4B /* sensor.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92CD29C2BFEE7A8005C0A4B /* sensor.xcframework */; };
+		B92CD29F2BFEE7B0005C0A4B /* sensor.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B92CD29C2BFEE7A8005C0A4B /* sensor.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B9A939552BD25C1900459C24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A939542BD25C1900459C24 /* AppDelegate.swift */; };
 		B9A939572BD25C1900459C24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A939562BD25C1900459C24 /* SceneDelegate.swift */; };
 		B9A939592BD25C1900459C24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A939582BD25C1900459C24 /* ViewController.swift */; };
@@ -20,10 +23,24 @@
 		B9C1B5A52B340D28000291C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9C1B5A42B340D28000291C8 /* Assets.xcassets */; };
 		B9C1B5A82B340D28000291C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C1B5A62B340D28000291C8 /* LaunchScreen.storyboard */; };
 		B9C1B5AB2B340D28000291C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B5AA2B340D28000291C8 /* main.m */; };
-		B9DFFB2A2BD2138700B1B7C5 /* sensor.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DFFB292BD2138700B1B7C5 /* sensor.xcframework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B96BA8582BFE0251008C2C07 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B92CD29F2BFEE7B0005C0A4B /* sensor.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B92CD29C2BFEE7A8005C0A4B /* sensor.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sensor.xcframework; sourceTree = "<group>"; };
 		B9A939522BD25C1900459C24 /* test2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9A939542BD25C1900459C24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9A939562BD25C1900459C24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +61,6 @@
 		B9C1B5A72B340D28000291C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9C1B5A92B340D28000291C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9C1B5AA2B340D28000291C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B9DFFB292BD2138700B1B7C5 /* sensor.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sensor.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B92CD29E2BFEE7B0005C0A4B /* sensor.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,13 +76,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9DFFB2A2BD2138700B1B7C5 /* sensor.xcframework in Frameworks */,
+				B92CD29D2BFEE7A8005C0A4B /* sensor.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B96BA8552BFE0250008C2C07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B9A939532BD25C1900459C24 /* test2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,10 +107,11 @@
 		B9C1B58C2B340D25000291C8 = {
 			isa = PBXGroup;
 			children = (
-				B9DFFB292BD2138700B1B7C5 /* sensor.xcframework */,
+				B92CD29C2BFEE7A8005C0A4B /* sensor.xcframework */,
 				B9C1B5972B340D25000291C8 /* test */,
 				B9A939532BD25C1900459C24 /* test2 */,
 				B9C1B5962B340D25000291C8 /* Products */,
+				B96BA8552BFE0250008C2C07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +152,7 @@
 				B9A9394E2BD25C1900459C24 /* Sources */,
 				B9A9394F2BD25C1900459C24 /* Frameworks */,
 				B9A939502BD25C1900459C24 /* Resources */,
+				B96BA8582BFE0251008C2C07 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,11 +310,13 @@
 				DEVELOPMENT_TEAM = VT7SC62W2Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = test2/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,11 +342,13 @@
 				DEVELOPMENT_TEAM = VT7SC62W2Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = test2/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

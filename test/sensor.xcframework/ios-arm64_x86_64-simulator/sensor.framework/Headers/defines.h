@@ -133,12 +133,8 @@ typedef NS_ENUM(NSInteger, BLEState)
     BLEStateUnConnected,
     BLEStateConnecting,
     BLEStateConnected,
-    BLEStateRunning,
-    BLEStateIdle,
+    BLEStateReady,
     BLEStateInvalid,
-    BLEStateScaning,
-    BLEStateUnDiscovered,
-    BLEStateDiscovered,
 };
 
 #endif /* sensordefines_h */

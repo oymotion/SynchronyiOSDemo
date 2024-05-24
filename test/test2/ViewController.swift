@@ -1,73 +1,154 @@
 //
 //  ViewController.swift
-//  test2
+//  test
 //
-//  Created by 叶常青 on 2024/4/19.
+//  Created by 叶常青 on 2024/4/18.
 //
 
 import UIKit
 import sensor
 
-let PACKAGE_COUNT = 10
+let PACKAGE_COUNT = Int32(10)
+let TIMEOUT = TimeInterval(6)
 
-class ViewController: UIViewController, SensorControllerDelegate {
-    private var profile: SensorController?
-    private var device: BLEPeripheral?
+class SensorDataContext : SensorProfileDelegate{
+    public var profile: SensorProfile
+    public var lastEEG: SensorData?
+    public var lastECG: SensorData?
+    public var lastError: Error?
+    
+    init(profile: SensorProfile!) {
+        self.profile = profile;
+        profile.delegate = self
+    }
+    
+    func onSensorErrorCallback(_ err: Error!) {
+        lastError = err;
+    }
+    
+    func onSensorStateChange(_ newState: BLEState) {
+        print("Device: " + profile.device.name + " state: " + profile.stateString)
+        if (newState == BLEState.unConnected || newState == BLEState.invalid){
+            print("Reset device: " + profile.device.name);
+            clear()
+        }else if (newState == BLEState.ready && !profile.hasInit){
+            Task{
+                if (!profile.hasInit){
+                    let hasInit = await profile.initAll(PACKAGE_COUNT, timeout: TIMEOUT)
+                    if (hasInit){
+                        print("Init " + profile.device.macAddress + " succeed");
+                    }else{
+                        print("Init " + profile.device.macAddress + " fail");
+                    }
+                }
+            }
+        }
+    }
+    
+    func onSensorNotify(_ rawData: SensorData!) {
+        if (rawData.dataType == NotifyDataType.NTF_EEG){
+            print(profile.device.name + " => Got EEG data: " + String(rawData.channelSamples[0][0].timeStampInMs));
+            lastEEG = rawData
+        }else if (rawData.dataType == NotifyDataType.NTF_ECG){
+            print(profile.device.name + " => Got ECG data: " + String(rawData.channelSamples[0][0].timeStampInMs));
+            lastECG = rawData
+        }
+        
+    }
+    
+    func clear(){
+        lastEEG = nil
+        lastECG = nil
+        lastError = nil
+    }
+}
+
+class ViewController: UIViewController , SensorControllerDelegate {
+    private var controller: SensorController?
+    private var sensorDataCtxs: [String : SensorDataContext] = [:]
     private var hasStartDataTransfer = false
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        profile = SensorController()
-        profile?.delegate = self
+        controller = SensorController.getInstance()
+        controller?.delegate = self
     }
 
     @IBAction func onScan(_ sender: Any) {
 //        deviceText.text = "scaning"
-        profile?.startScan(5)
+        if (!controller!.isEnable){
+            print("Please open blue tooth")
+            return
+        }
+        if (controller!.isScaning){
+            controller!.stopScan()
+        }else{
+            controller!.startScan(TIMEOUT)
+        }
+        
     }
 
     @IBAction func onConnect(_ sender: Any) {
-        if profile?.state == BLEState.running {
-            profile?.disconnect()
-        } else if let device {
-            profile?.connect(device)
+        for sensorData in sensorDataCtxs {
+            if (sensorData.value.profile.state == BLEState.ready){
+                sensorData.value.profile.disconnect()
+            }else{
+                sensorData.value.profile.connect()
+            }
         }
     }
 
     @IBAction func onVersion(_ sender: Any) {
-        profile?.initDataNotification(Int32(PACKAGE_COUNT), cb: { [self] resp in
-            if resp == GF_RET_CODE.SUCCESS {
-                profile?.getFirmwareVersion({ [self] resp, firmwareVersion in
-                    DispatchQueue.main.async(execute: { [self] in
-//                        self.versionText.text = firmwareVersion
-                    })
+        Task{
+            for sensorData in self.sensorDataCtxs {
+                if (sensorData.value.profile.state == BLEState.ready){
+                    let version = await sensorData.value.profile.version(TIMEOUT)
+                    if (version != nil){
+                        print("Version: " + sensorData.value.profile.device.name + " : " + version!)
+                    }else{
+                        print("Get version fail: "  + sensorData.value.profile.device.name)
+                    }
 
-                }, timeout: 5)
-            } else {
-                DispatchQueue.main.async {
-//                    self.versionText.text = @"Init fail";
+                    let battery = await sensorData.value.profile.battery(TIMEOUT)
+                    if (battery >= 0){
+                        print("Battery: " + sensorData.value.profile.device.name + " : " + String(battery))
+                    }else{
+                        print("Get battery fail: "  + sensorData.value.profile.device.name)
+                    }
                 }
             }
-        })
+        }
+    }
 
-    }
-    
-    func onSensorErrorCallback(_ err: Error) {
-        print(err.localizedDescription)
-    }
-    
-    func onSensorStateChange(_ newState: BLEState) {
-        print(newState)
+    @IBAction func onTest(_ sender: Any) {
+        Task{
+            for sensorData in self.sensorDataCtxs {
+                if (sensorData.value.profile.state == BLEState.ready){
+                    if (sensorData.value.profile.hasStartDataNotification){
+                        sensorData.value.profile.stopDataNotification();
+                    }else{
+                        sensorData.value.profile.startDataNotification();
+                    }
+                }
+            }
+        }
     }
     
     func onSensorScanResult(_ bleDevices: [BLEPeripheral]) {
-        print(bleDevices)
-    }
-    
-    func onSensorNotify(_ rawData: SensorData) {
-        print(rawData.channelSamples[0][0].rawData)
+        print("onSensorScanResult")
+        for bleDevice in bleDevices {
+            if (bleDevice.name.hasPrefix("OB")){
+                if (sensorDataCtxs[bleDevice.macAddress] == nil){
+                    let sensorProfile = controller?.getSensor(bleDevice.macAddress);
+                    let sensorDataCtx = SensorDataContext(profile : sensorProfile)
+                    sensorDataCtxs[bleDevice.macAddress] = sensorDataCtx;
+                    print("Found: " + bleDevice.name + " : " + String(bleDevice.rssi.intValue))
+                }
+            }
+        }
     }
 }
+
 

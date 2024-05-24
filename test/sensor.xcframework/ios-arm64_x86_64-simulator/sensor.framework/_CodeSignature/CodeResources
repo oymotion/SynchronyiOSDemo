@@ -6,19 +6,15 @@
 	<dict>
 		<key>Headers/BLEPeripheral.h</key>
 		<data>
-		f3JWAH04rRM+pYnYSk5O0cOYYjU=
+		ScMKAnaRSunM5VR5LhzbqyPcMM8=
 		</data>
 		<key>Headers/SensorController.h</key>
 		<data>
-		Y+EMD7c35vZMTpQqyYXVWFmzgaM=
+		WllkZlquobpEOm4kRRAqe96kugQ=
 		</data>
 		<key>Headers/defines.h</key>
 		<data>
-		g8cnTIlSpuTwEi51x8gCY7jbutM=
-		</data>
-		<key>Headers/sensor-Swift.h</key>
-		<data>
-		Yp8Lu5YSnxS7nlNko/GkdllHQuA=
+		rU8/2ZvOEUZxbv5ctjwe2xRFAH4=
 		</data>
 		<key>Headers/sensor.h</key>
 		<data>
@@ -26,7 +22,7 @@
 		</data>
 		<key>Headers/sensorProfile.h</key>
 		<data>
-		1621Zprn31ZxEJ3OTplzbq3rVm0=
+		yEUIXgobS00vM5D9zNOkAAn8/Rc=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -34,47 +30,7 @@
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		WSIK/PXqC2n4hpQmfiS30D4TMXA=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
-		<data>
-		aNbFYj8GM9hQtr9ViJ6WlSnGUpQ=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
-		<data>
-		/eFB/5qEgscjfjxdAUVP7wOhieI=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
-		<data>
-		4scQ0X45+jUwmggud3jKddhfecg=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
-		<data>
-		/eFB/5qEgscjfjxdAUVP7wOhieI=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
-		<data>
-		IBU5ims4o+MzpABgSXkRczJYCUo=
-		</data>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
-		<data>
-		aNbFYj8GM9hQtr9ViJ6WlSnGUpQ=
-		</data>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
-		<data>
-		Vhm8yPXStplBBlISCY6bcAJb29E=
-		</data>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
-		<data>
-		2Duewrs21uQ03+lN84lCHMubjWw=
-		</data>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
-		<data>
-		Vhm8yPXStplBBlISCY6bcAJb29E=
-		</data>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
-		<data>
-		CVYrlJzA/8BwYlQT3hk6pQMFP+c=
+		PmkZKQtcJn9CbKZGFyH8DHGquDM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -83,44 +39,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			f3JWAH04rRM+pYnYSk5O0cOYYjU=
+			ScMKAnaRSunM5VR5LhzbqyPcMM8=
 			</data>
 			<key>hash2</key>
 			<data>
-			MB21GKprkG0F4nXowZe5+rQjrYMAdY+1+4jCF269NWw=
+			xsCr5VEKnCj9s+H04uZnWmn5h03Zk1AZV5LEzEe7/BE=
 			</data>
 		</dict>
 		<key>Headers/SensorController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Y+EMD7c35vZMTpQqyYXVWFmzgaM=
+			WllkZlquobpEOm4kRRAqe96kugQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			3gLnU330keEGRkrEO6p5di+b1KqLDVr+RPrPCIRnBUo=
+			FXjv0NVPfs2win7Yhr/4LVvmxWV9mPTH9eHkDrA+pzc=
 			</data>
 		</dict>
 		<key>Headers/defines.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			g8cnTIlSpuTwEi51x8gCY7jbutM=
+			rU8/2ZvOEUZxbv5ctjwe2xRFAH4=
 			</data>
 			<key>hash2</key>
 			<data>
-			uwzsY58Z6v0t/8yU6+PS4ru0cRSTeZ2afIzBwXroZA0=
-			</data>
-		</dict>
-		<key>Headers/sensor-Swift.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Yp8Lu5YSnxS7nlNko/GkdllHQuA=
-			</data>
-			<key>hash2</key>
-			<data>
-			OZsqKYyczBda+R5D6MEcrQnZnPXxdWyy82MVoegn7iM=
+			0OpKYsljVNp93/GGp6f/aW3RQKwtsFg4Hq47AGzS70w=
 			</data>
 		</dict>
 		<key>Headers/sensor.h</key>
@@ -138,132 +83,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1621Zprn31ZxEJ3OTplzbq3rVm0=
+			yEUIXgobS00vM5D9zNOkAAn8/Rc=
 			</data>
 			<key>hash2</key>
 			<data>
-			l1MsS7k1kWjpGWwvofTDjDiJlQm3tAlvzaDR33VNKT4=
+			j+BwFAenz8hiBrZ9tx26DnQx8fLloteKBq7bgtecbZI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WSIK/PXqC2n4hpQmfiS30D4TMXA=
+			PmkZKQtcJn9CbKZGFyH8DHGquDM=
 			</data>
 			<key>hash2</key>
 			<data>
-			trmoP1GX4ROGitDyHSprrHRiZCsUlbnDnzcrAfgi8ts=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			aNbFYj8GM9hQtr9ViJ6WlSnGUpQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			L+1AJMmycg7kp0vgh7gLO8OXlH90tFTg7gO9KOTcW78=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			/eFB/5qEgscjfjxdAUVP7wOhieI=
-			</data>
-			<key>hash2</key>
-			<data>
-			U1beMl1UjXLy6tbS3iScvLZT03yTaHRItEdgTGoe/Es=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4scQ0X45+jUwmggud3jKddhfecg=
-			</data>
-			<key>hash2</key>
-			<data>
-			+FlUff7xPHXDVk3+RYmlcop9UWfmxSdgzxK+IupsgCY=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			/eFB/5qEgscjfjxdAUVP7wOhieI=
-			</data>
-			<key>hash2</key>
-			<data>
-			U1beMl1UjXLy6tbS3iScvLZT03yTaHRItEdgTGoe/Es=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			IBU5ims4o+MzpABgSXkRczJYCUo=
-			</data>
-			<key>hash2</key>
-			<data>
-			/qhYd1FDBzWU2+kGw76T2lncoGxeEVKCVP0bo+XAXqM=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			aNbFYj8GM9hQtr9ViJ6WlSnGUpQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			L+1AJMmycg7kp0vgh7gLO8OXlH90tFTg7gO9KOTcW78=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Vhm8yPXStplBBlISCY6bcAJb29E=
-			</data>
-			<key>hash2</key>
-			<data>
-			3PPGM/13uO9fw7IQSJi9vIP7wj51jpKFyG9BdYLUzXA=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2Duewrs21uQ03+lN84lCHMubjWw=
-			</data>
-			<key>hash2</key>
-			<data>
-			cJukUrvlpqYLNGP81j9fxk7vyXu1cdfMmaO7TO2QDjc=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Vhm8yPXStplBBlISCY6bcAJb29E=
-			</data>
-			<key>hash2</key>
-			<data>
-			3PPGM/13uO9fw7IQSJi9vIP7wj51jpKFyG9BdYLUzXA=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			CVYrlJzA/8BwYlQT3hk6pQMFP+c=
-			</data>
-			<key>hash2</key>
-			<data>
-			WSEIbqNmCHIsA+hDhVZcY7gSRU8QlOhSdPRpYg+KTis=
+			BDjL+me3BBqvaiEz6ERAoe4Mg+SwwX8q/IJQ++zKZL4=
 			</data>
 		</dict>
 	</dict>

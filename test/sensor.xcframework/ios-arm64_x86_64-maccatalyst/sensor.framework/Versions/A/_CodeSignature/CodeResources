@@ -15,44 +15,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			f3JWAH04rRM+pYnYSk5O0cOYYjU=
+			ScMKAnaRSunM5VR5LhzbqyPcMM8=
 			</data>
 			<key>hash2</key>
 			<data>
-			MB21GKprkG0F4nXowZe5+rQjrYMAdY+1+4jCF269NWw=
+			xsCr5VEKnCj9s+H04uZnWmn5h03Zk1AZV5LEzEe7/BE=
 			</data>
 		</dict>
 		<key>Headers/SensorController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Y+EMD7c35vZMTpQqyYXVWFmzgaM=
+			WllkZlquobpEOm4kRRAqe96kugQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			3gLnU330keEGRkrEO6p5di+b1KqLDVr+RPrPCIRnBUo=
+			FXjv0NVPfs2win7Yhr/4LVvmxWV9mPTH9eHkDrA+pzc=
 			</data>
 		</dict>
 		<key>Headers/defines.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			g8cnTIlSpuTwEi51x8gCY7jbutM=
+			rU8/2ZvOEUZxbv5ctjwe2xRFAH4=
 			</data>
 			<key>hash2</key>
 			<data>
-			uwzsY58Z6v0t/8yU6+PS4ru0cRSTeZ2afIzBwXroZA0=
-			</data>
-		</dict>
-		<key>Headers/sensor-Swift.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Yp8Lu5YSnxS7nlNko/GkdllHQuA=
-			</data>
-			<key>hash2</key>
-			<data>
-			OZsqKYyczBda+R5D6MEcrQnZnPXxdWyy82MVoegn7iM=
+			0OpKYsljVNp93/GGp6f/aW3RQKwtsFg4Hq47AGzS70w=
 			</data>
 		</dict>
 		<key>Headers/sensor.h</key>
@@ -70,132 +59,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1621Zprn31ZxEJ3OTplzbq3rVm0=
+			yEUIXgobS00vM5D9zNOkAAn8/Rc=
 			</data>
 			<key>hash2</key>
 			<data>
-			l1MsS7k1kWjpGWwvofTDjDiJlQm3tAlvzaDR33VNKT4=
+			j+BwFAenz8hiBrZ9tx26DnQx8fLloteKBq7bgtecbZI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WSIK/PXqC2n4hpQmfiS30D4TMXA=
+			PmkZKQtcJn9CbKZGFyH8DHGquDM=
 			</data>
 			<key>hash2</key>
 			<data>
-			trmoP1GX4ROGitDyHSprrHRiZCsUlbnDnzcrAfgi8ts=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-macabi.abi.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			aNbFYj8GM9hQtr9ViJ6WlSnGUpQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			L+1AJMmycg7kp0vgh7gLO8OXlH90tFTg7gO9KOTcW78=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			o5WSA/84Uo2BnqV1Ld2etqoSHCc=
-			</data>
-			<key>hash2</key>
-			<data>
-			L5vYxCLxy0c5fqCgRLuixlcCZ7JLe5KSdywmXHm7p4E=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			XPsi/LDObcL1mg8xmzxXlNhMSuE=
-			</data>
-			<key>hash2</key>
-			<data>
-			U0TlkeBlUZruGMbvivDGhj2rN1hyVkUeYMnNwoaAogg=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			o5WSA/84Uo2BnqV1Ld2etqoSHCc=
-			</data>
-			<key>hash2</key>
-			<data>
-			L5vYxCLxy0c5fqCgRLuixlcCZ7JLe5KSdywmXHm7p4E=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios-macabi.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+KzrgZQigDqn+uDbLu6sj0+S5JU=
-			</data>
-			<key>hash2</key>
-			<data>
-			uG3+Wo8rkwEXpaXbJlS/YB9q1ctEEeb+zCkqHF9AIBo=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-macabi.abi.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			aNbFYj8GM9hQtr9ViJ6WlSnGUpQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			L+1AJMmycg7kp0vgh7gLO8OXlH90tFTg7gO9KOTcW78=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			IrgG7xV8s/ANMOSeu2x+kAyfnGI=
-			</data>
-			<key>hash2</key>
-			<data>
-			Ir/Xmgx9U2K99eMBtL74a+v+ndejqXnYZTtY2nlkpQg=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			/BDYOWVvY1XXyRHgxERGS7CDs2E=
-			</data>
-			<key>hash2</key>
-			<data>
-			OK0koOQ9BEim+8cAu/zl4F45Nc+vZPh8g83tBa1Nnas=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			IrgG7xV8s/ANMOSeu2x+kAyfnGI=
-			</data>
-			<key>hash2</key>
-			<data>
-			Ir/Xmgx9U2K99eMBtL74a+v+ndejqXnYZTtY2nlkpQg=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/x86_64-apple-ios-macabi.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HO5fozcpuCT5pJnd1+Odi895+Yo=
-			</data>
-			<key>hash2</key>
-			<data>
-			K4+XNc1A5V8Nc8rf5aOeTXkiQT3CMlVbpnJFRqhv9oE=
+			BDjL+me3BBqvaiEz6ERAoe4Mg+SwwX8q/IJQ++zKZL4=
 			</data>
 		</dict>
 		<key>Resources/Info.plist</key>

@@ -6,19 +6,15 @@
 	<dict>
 		<key>Headers/BLEPeripheral.h</key>
 		<data>
-		f3JWAH04rRM+pYnYSk5O0cOYYjU=
+		ScMKAnaRSunM5VR5LhzbqyPcMM8=
 		</data>
 		<key>Headers/SensorController.h</key>
 		<data>
-		Y+EMD7c35vZMTpQqyYXVWFmzgaM=
+		WllkZlquobpEOm4kRRAqe96kugQ=
 		</data>
 		<key>Headers/defines.h</key>
 		<data>
-		g8cnTIlSpuTwEi51x8gCY7jbutM=
-		</data>
-		<key>Headers/sensor-Swift.h</key>
-		<data>
-		uWAFFD7qweas6k8hZ+K0Rx89gIg=
+		rU8/2ZvOEUZxbv5ctjwe2xRFAH4=
 		</data>
 		<key>Headers/sensor.h</key>
 		<data>
@@ -26,7 +22,7 @@
 		</data>
 		<key>Headers/sensorProfile.h</key>
 		<data>
-		1621Zprn31ZxEJ3OTplzbq3rVm0=
+		yEUIXgobS00vM5D9zNOkAAn8/Rc=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -34,27 +30,7 @@
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		WSIK/PXqC2n4hpQmfiS30D4TMXA=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.abi.json</key>
-		<data>
-		aNbFYj8GM9hQtr9ViJ6WlSnGUpQ=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
-		<data>
-		+2aBMBQa9bRydy8C7x1xmaxLsMc=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.swiftdoc</key>
-		<data>
-		7ZfcQE4hMiiRbZnhSSG10XSjrH0=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.swiftinterface</key>
-		<data>
-		+2aBMBQa9bRydy8C7x1xmaxLsMc=
-		</data>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.swiftmodule</key>
-		<data>
-		bwH7MjTW3G7HF9lC2I7CZnSikI0=
+		PmkZKQtcJn9CbKZGFyH8DHGquDM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -63,44 +39,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			f3JWAH04rRM+pYnYSk5O0cOYYjU=
+			ScMKAnaRSunM5VR5LhzbqyPcMM8=
 			</data>
 			<key>hash2</key>
 			<data>
-			MB21GKprkG0F4nXowZe5+rQjrYMAdY+1+4jCF269NWw=
+			xsCr5VEKnCj9s+H04uZnWmn5h03Zk1AZV5LEzEe7/BE=
 			</data>
 		</dict>
 		<key>Headers/SensorController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Y+EMD7c35vZMTpQqyYXVWFmzgaM=
+			WllkZlquobpEOm4kRRAqe96kugQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			3gLnU330keEGRkrEO6p5di+b1KqLDVr+RPrPCIRnBUo=
+			FXjv0NVPfs2win7Yhr/4LVvmxWV9mPTH9eHkDrA+pzc=
 			</data>
 		</dict>
 		<key>Headers/defines.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			g8cnTIlSpuTwEi51x8gCY7jbutM=
+			rU8/2ZvOEUZxbv5ctjwe2xRFAH4=
 			</data>
 			<key>hash2</key>
 			<data>
-			uwzsY58Z6v0t/8yU6+PS4ru0cRSTeZ2afIzBwXroZA0=
-			</data>
-		</dict>
-		<key>Headers/sensor-Swift.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			uWAFFD7qweas6k8hZ+K0Rx89gIg=
-			</data>
-			<key>hash2</key>
-			<data>
-			5SxZlCXvWDgCz1fbMzQDy/OejOeD7LSgbyQZIYd55BQ=
+			0OpKYsljVNp93/GGp6f/aW3RQKwtsFg4Hq47AGzS70w=
 			</data>
 		</dict>
 		<key>Headers/sensor.h</key>
@@ -118,77 +83,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1621Zprn31ZxEJ3OTplzbq3rVm0=
+			yEUIXgobS00vM5D9zNOkAAn8/Rc=
 			</data>
 			<key>hash2</key>
 			<data>
-			l1MsS7k1kWjpGWwvofTDjDiJlQm3tAlvzaDR33VNKT4=
+			j+BwFAenz8hiBrZ9tx26DnQx8fLloteKBq7bgtecbZI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WSIK/PXqC2n4hpQmfiS30D4TMXA=
+			PmkZKQtcJn9CbKZGFyH8DHGquDM=
 			</data>
 			<key>hash2</key>
 			<data>
-			trmoP1GX4ROGitDyHSprrHRiZCsUlbnDnzcrAfgi8ts=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.abi.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			aNbFYj8GM9hQtr9ViJ6WlSnGUpQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			L+1AJMmycg7kp0vgh7gLO8OXlH90tFTg7gO9KOTcW78=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+2aBMBQa9bRydy8C7x1xmaxLsMc=
-			</data>
-			<key>hash2</key>
-			<data>
-			fVaABhVi1TrrERebW4Qr9dZVu7FLXI5yQfk86v/znfk=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7ZfcQE4hMiiRbZnhSSG10XSjrH0=
-			</data>
-			<key>hash2</key>
-			<data>
-			Z12UEj6UoW7+q7ktREeF9TVSabxBCm4HYnL8XIJtfck=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+2aBMBQa9bRydy8C7x1xmaxLsMc=
-			</data>
-			<key>hash2</key>
-			<data>
-			fVaABhVi1TrrERebW4Qr9dZVu7FLXI5yQfk86v/znfk=
-			</data>
-		</dict>
-		<key>Modules/sensor.swiftmodule/arm64-apple-ios.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			bwH7MjTW3G7HF9lC2I7CZnSikI0=
-			</data>
-			<key>hash2</key>
-			<data>
-			LFFuCWQ1Ekj0DRp0/t85grk51TP6CtXb4DiuAp8LCyM=
+			BDjL+me3BBqvaiEz6ERAoe4Mg+SwwX8q/IJQ++zKZL4=
 			</data>
 		</dict>
 	</dict>
