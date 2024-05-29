@@ -104,13 +104,13 @@ class ViewController: UIViewController , SensorControllerDelegate {
         Task{
             for sensorData in self.sensorDataCtxs {
                 if (sensorData.value.profile.state == BLEState.ready){
-                    let version = await sensorData.value.profile.version(TIMEOUT)
-                    if (version != nil){
-                        print("Version: " + sensorData.value.profile.device.name + " : " + version!)
+                    let deviceInfo = await sensorData.value.profile.deviceInfo(TIMEOUT)
+                    if (deviceInfo != nil){
+                        print("deviceInfo: " + deviceInfo!.modelName + " : " + deviceInfo!.firmwareVersion)
                     }else{
-                        print("Get version fail: "  + sensorData.value.profile.device.name)
+                        print("Get deviceInfo fail: "  + sensorData.value.profile.device.name)
                     }
-
+                
                     let battery = await sensorData.value.profile.battery(TIMEOUT)
                     if (battery >= 0){
                         print("Battery: " + sensorData.value.profile.device.name + " : " + String(battery))
