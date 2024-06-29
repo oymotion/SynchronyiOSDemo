@@ -37,6 +37,8 @@ class SensorDataContext : SensorProfileDelegate{
                     let hasInit = await profile.initAll(PACKAGE_COUNT, timeout: TIMEOUT)
                     if (hasInit){
                         print("Init " + profile.device.macAddress + " succeed");
+                        print("EEG channel count:" + String(profile.eegChannelCount));
+                        print("ECG channel count:" + String(profile.ecgChannelCount));
                     }else{
                         print("Init " + profile.device.macAddress + " fail");
                     }
@@ -49,6 +51,12 @@ class SensorDataContext : SensorProfileDelegate{
         if (rawData.dataType == NotifyDataType.NTF_EEG){
             print(profile.device.name + " => Got EEG data: " + String(rawData.channelSamples[0][0].timeStampInMs));
             lastEEG = rawData
+            
+//            lastEEG?.channelSamples[0][0].timeStampInMs  : timestamp for this signal
+//            lastEEG?.channelSamples[0][0].isLost         : check it and do some logic if the data is lost
+//            lastEEG?.channelSamples[0][0].convertData    : physical unit is uV
+//            lastEEG?.channelSamples[0][0].impedance
+            
         }else if (rawData.dataType == NotifyDataType.NTF_ECG){
             print(profile.device.name + " => Got ECG data: " + String(rawData.channelSamples[0][0].timeStampInMs));
             lastECG = rawData
