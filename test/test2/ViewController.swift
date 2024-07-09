@@ -15,6 +15,8 @@ class SensorDataContext : SensorProfileDelegate{
     public var profile: SensorProfile
     public var lastEEG: SensorData?
     public var lastECG: SensorData?
+    public var lastACC: SensorData?
+    public var lastGYRO: SensorData?
     public var lastError: Error?
     
     init(profile: SensorProfile!) {
@@ -39,6 +41,8 @@ class SensorDataContext : SensorProfileDelegate{
                         print("Init " + profile.device.macAddress + " succeed");
                         print("EEG channel count:" + String(profile.eegChannelCount));
                         print("ECG channel count:" + String(profile.ecgChannelCount));
+                        print("ACC channel count:" + String(profile.accChannelCount));
+                        print("GYRO channel count:" + String(profile.gyroChannelCount));
                     }else{
                         print("Init " + profile.device.macAddress + " fail");
                     }
@@ -50,16 +54,21 @@ class SensorDataContext : SensorProfileDelegate{
     func onSensorNotify(_ rawData: SensorData!) {
         if (rawData.dataType == NotifyDataType.NTF_EEG){
             print(profile.device.name + " => Got EEG data: " + String(rawData.channelSamples[0][0].timeStampInMs));
-            lastEEG = rawData
-            
+
 //            lastEEG?.channelSamples[0][0].timeStampInMs  : timestamp for this signal
 //            lastEEG?.channelSamples[0][0].isLost         : check it and do some logic if the data is lost
 //            lastEEG?.channelSamples[0][0].convertData    : physical unit is uV
-//            lastEEG?.channelSamples[0][0].impedance
+//            lastEEG?.channelSamples[0][0].impedance      : this is for impedance chech
             
         }else if (rawData.dataType == NotifyDataType.NTF_ECG){
             print(profile.device.name + " => Got ECG data: " + String(rawData.channelSamples[0][0].timeStampInMs));
             lastECG = rawData
+        }else if (rawData.dataType == NotifyDataType.NTF_ACC_DATA){
+            print(profile.device.name + " => Got ACC data: " + String(rawData.channelSamples[0][0].timeStampInMs));
+            lastACC = rawData
+        }else if (rawData.dataType == NotifyDataType.NTF_GYO_DATA){
+            print(profile.device.name + " => Got GYRO data: " + String(rawData.channelSamples[0][0].timeStampInMs));
+            lastGYRO = rawData
         }
         
     }
@@ -67,6 +76,8 @@ class SensorDataContext : SensorProfileDelegate{
     func clear(){
         lastEEG = nil
         lastECG = nil
+        lastACC = nil
+        lastGYRO = nil
         lastError = nil
     }
 }
