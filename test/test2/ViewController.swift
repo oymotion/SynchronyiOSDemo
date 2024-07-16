@@ -8,7 +8,7 @@
 import UIKit
 import sensor
 
-let PACKAGE_COUNT = Int32(10)
+let PACKAGE_COUNT = Int32(16)
 let TIMEOUT = TimeInterval(6)
 
 class SensorDataContext : SensorProfileDelegate{
@@ -54,11 +54,14 @@ class SensorDataContext : SensorProfileDelegate{
     func onSensorNotify(_ rawData: SensorData!) {
         if (rawData.dataType == NotifyDataType.NTF_EEG){
             print(profile.device.name + " => Got EEG data: " + String(rawData.channelSamples[0][0].timeStampInMs));
-
-//            lastEEG?.channelSamples[0][0].timeStampInMs  : timestamp for this signal
-//            lastEEG?.channelSamples[0][0].isLost         : check it and do some logic if the data is lost
-//            lastEEG?.channelSamples[0][0].convertData    : physical unit is uV
-//            lastEEG?.channelSamples[0][0].impedance      : this is for impedance chech
+            
+            lastEEG = rawData
+            
+            //please check following properies
+//            lastEEG?.channelSamples[0][0].timeStampInMs
+//            lastEEG?.channelSamples[0][0].isLost
+//            lastEEG?.channelSamples[0][0].convertData
+//            lastEEG?.channelSamples[0][0].impedance
             
         }else if (rawData.dataType == NotifyDataType.NTF_ECG){
             print(profile.device.name + " => Got ECG data: " + String(rawData.channelSamples[0][0].timeStampInMs));
@@ -123,7 +126,7 @@ class ViewController: UIViewController , SensorControllerDelegate {
         Task{
             for sensorData in self.sensorDataCtxs {
                 if (sensorData.value.profile.state == BLEState.ready){
-                    let deviceInfo = await sensorData.value.profile.deviceInfo(TIMEOUT)
+                    let deviceInfo = await sensorData.value.profile.deviceInfo(false,timeout:TIMEOUT)
                     if (deviceInfo != nil){
                         print("deviceInfo: " + deviceInfo!.modelName + " : " + deviceInfo!.firmwareVersion)
                     }else{
@@ -146,10 +149,12 @@ class ViewController: UIViewController , SensorControllerDelegate {
             for sensorData in self.sensorDataCtxs {
                 if (sensorData.value.profile.state == BLEState.ready){
                     if (sensorData.value.profile.hasStartDataNotification){
-                        sensorData.value.profile.stopDataNotification();
+                        await sensorData.value.profile.stopDataNotification(TIMEOUT);
                     }else{
-                        sensorData.value.profile.startDataNotification();
+                        await
+                            sensorData.value.profile.startDataNotification(TIMEOUT);
                     }
+                    print("set data notify result: " + String(sensorData.value.profile.hasStartDataNotification));
                 }
             }
         }
